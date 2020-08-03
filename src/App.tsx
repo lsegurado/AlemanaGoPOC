@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StatusBar, ScrollView } from 'react-native';
+import { View, StatusBar, FlatList, ListRenderItemInfo } from 'react-native';
 import NewsApiHelper from './apiHelpers/NewsApiHelper';
 import { Articles } from './types/Articles';
 import { Article } from './components/Article';
@@ -20,13 +20,19 @@ export default function App() {
     setArticles(newsResult.articles);
   }
 
+  const renderArticle = ({ item }: ListRenderItemInfo<Articles>) => (
+    <Article {...item} />
+  );
+
   return (
-    <View>
+    <View style={{flex: 1}}>
       <StatusBar backgroundColor="#ccd520" barStyle={'dark-content'} />
       <AppBar />
-      <ScrollView>
-        {articles ? articles.map(article => <Article key={article.url} {...article}></Article>) : undefined}
-      </ScrollView>
-    </ View >
+      <FlatList<Articles>
+        data={articles}
+        renderItem={renderArticle}
+        keyExtractor={article => article.url}
+      />
+    </View>
   );
 }
