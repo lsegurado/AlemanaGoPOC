@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { StyleSheet, Text, View, Image, Linking, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, TouchableHighlight } from 'react-native';
 import { Articles } from '../types/Articles';
 
 export const Article: FC<Articles> = (props) => {
@@ -14,17 +14,19 @@ export const Article: FC<Articles> = (props) => {
 
     return (
         <View style={styles.container}>
-            <TouchableWithoutFeedback onPress={handleClick}>
+            <TouchableHighlight onPress={handleClick}
+                activeOpacity={0.7}
+                underlayColor="#DDDDDD">
                 <View>
                     {props.urlToImage ? <Image
                         style={styles.newsImage}
                         source={{ uri: props.urlToImage }}
-                    />: undefined}
+                    /> : undefined}
                     <Text style={styles.title} numberOfLines={3}>{props.title}</Text>
-                    <Text style={styles.description} numberOfLines={2}>{props.description}</Text>
+                    {props.description ? <Text style={styles.description} numberOfLines={2}>{props.description}</Text> : undefined}
                     <Text style={styles.source} numberOfLines={1}>{props.source.name}</Text>
                 </View>
-            </TouchableWithoutFeedback>
+            </TouchableHighlight>
         </View>
     );
 }
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
+        borderRadius: 4,
         elevation: 5,
     },
     newsImage: {
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
         padding: 5,
         flex: 1,
         textAlign: 'right',
-        fontWeight: '100'
+        fontWeight: '100',
+        fontStyle: 'italic'
     },
 });

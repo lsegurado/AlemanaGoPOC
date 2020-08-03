@@ -82,6 +82,7 @@ exports[`Article match snapshot 1`] = `
   style={
     Object {
       "backgroundColor": "#FFF",
+      "borderRadius": 4,
       "elevation": 5,
       "margin": 10,
       "shadowColor": "#000",
@@ -105,56 +106,59 @@ exports[`Article match snapshot 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
   >
-    <Image
-      source={
-        Object {
-          "uri": "https://media.ambito.com/adjuntos/239/imagenes/037/312/0037312588.jpg",
+    <View>
+      <Image
+        source={
+          Object {
+            "uri": "https://media.ambito.com/adjuntos/239/imagenes/037/312/0037312588.jpg",
+          }
         }
-      }
-      style={
-        Object {
-          "flex": 1,
-          "height": 200,
+        style={
+          Object {
+            "flex": 1,
+            "height": 200,
+          }
         }
-      }
-    />
-    <Text
-      numberOfLines={3}
-      style={
-        Object {
-          "flex": 1,
-          "fontWeight": "bold",
-          "padding": 5,
+      />
+      <Text
+        numberOfLines={3}
+        style={
+          Object {
+            "flex": 1,
+            "fontWeight": "bold",
+            "padding": 5,
+          }
         }
-      }
-    >
-      En julio, las acciones y los bonos argentinos saltan hasta 50% por mayor expectativa de acuerdo sobre deuda - ámbito.com
-    </Text>
-    <Text
-      numberOfLines={2}
-      style={
-        Object {
-          "flex": 1,
-          "fontWeight": "300",
-          "padding": 5,
+      >
+        En julio, las acciones y los bonos argentinos saltan hasta 50% por mayor expectativa de acuerdo sobre deuda - ámbito.com
+      </Text>
+      <Text
+        numberOfLines={2}
+        style={
+          Object {
+            "flex": 1,
+            "fontWeight": "300",
+            "padding": 5,
+          }
         }
-      }
-    >
-      Las importantes variaciones positivas son medidas en pesos. Calculadas en dólares, los avances son menores por la devaluación del peso en los mercados bursátiles. Este viernes, en tanto, el índice S&P Merval de BYMA bajó 0,3% a 49.253,62 unidades.
-    </Text>
-    <Text
-      numberOfLines={1}
-      style={
-        Object {
-          "flex": 1,
-          "fontWeight": "100",
-          "padding": 5,
-          "textAlign": "right",
+      >
+        Las importantes variaciones positivas son medidas en pesos. Calculadas en dólares, los avances son menores por la devaluación del peso en los mercados bursátiles. Este viernes, en tanto, el índice S&P Merval de BYMA bajó 0,3% a 49.253,62 unidades.
+      </Text>
+      <Text
+        numberOfLines={1}
+        style={
+          Object {
+            "flex": 1,
+            "fontStyle": "italic",
+            "fontWeight": "100",
+            "padding": 5,
+            "textAlign": "right",
+          }
         }
-      }
-    >
-      ámbito.com
-    </Text>
+      >
+        ámbito.com
+      </Text>
+    </View>
   </View>
 </View>
 `;

@@ -14,7 +14,9 @@ export default function App() {
 
   async function getNews() {
     const apiHelper = new NewsApiHelper();
-    const newsResult = await apiHelper.getNews('business', new Date(2020, 6, 30), 'publishedAt', 'ar');
+    const date = new Date();
+    date.setMonth(date.getMonth() - 1);
+    const newsResult = await apiHelper.getNews('business', date, 'publishedAt', 'ar');
     setArticles(newsResult.articles);
   }
 
@@ -23,7 +25,7 @@ export default function App() {
       <StatusBar backgroundColor="#ccd520" barStyle={'dark-content'} />
       <AppBar />
       <ScrollView>
-        {articles.map(article => <Article key={article.url} {...article}></Article>)}
+        {articles ? articles.map(article => <Article key={article.url} {...article}></Article>) : undefined}
       </ScrollView>
     </ View >
   );

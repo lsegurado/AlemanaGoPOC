@@ -9,7 +9,7 @@ export default class ApiHelperBase {
         const response = await fetch(url.toString(), init);
         return response.json() as Promise<T>;
     }
-    async get<T>(input: RequestInfo, params: any, init?: RequestInit | undefined): Promise<T>{
-        return await this.fetch<T>(input,params, {method: 'GET'});
+    async get<T>(input: RequestInfo, params: any): Promise<T> {
+        return await this.fetch<T>(input, params, { method: 'GET' });
     }
 }
